@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>检测报告列表展示</title>
+    <link rel="stylesheet" href="./css/pagenation.css">
+    <link rel="stylesheet" href="./css/test_common.css">
+    <style>
+        html,body,div{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        .test-container{
+            max-width: 768px;
+            margin:0 auto;
+        }
+        .tables{
+            padding: 5px;
+            width: 100%;;
+        }
+        .tables table{
+            border-collapse: collapse;
+            width:100%;
+        }
+        .tables td{
+            border:1px solid #f0f0f0;
+            font-size: .6em;
+            height: 2.8em;
+            min-width: 48px;
+            color:#292828;
+            text-align: center;
+        }
+        #search{
+            text-align: center;
+        }
+        #search input{
+            width: 60px;
+            background-color: #04a277;
+            color:#fff;
+            text-align: center;
+            outline: none;
+            border:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="tables">
+            <table id="test-table">
+               <tr>
+                    <td>表头1</td>
+                    <td>表头2</td>
+                    <td>表头3</td>
+                    <td>表头4</td>
+                    <td>表头5</td>
+                    <td>表头6</td>
+               </tr>
+            </table>
+            <div id="pagenation"></div>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/pagination.js"></script>
+    <script>
+        $(function(){
+            var str=`<tr>
+                        <td>测试1</td>
+                        <td>测试2</td>
+                        <td>测试3</td>
+                        <td>测试4</td>
+                        <td>测试5</td>
+                        <td>测试6</td>
+                    </tr>`;
+            for(var i=0;i<20;i++){
+                $('#test-table').append(str);
+            }
+            $('#test-table').pagination(1,8,true);
+        })
+    </script>
+</body>
+</html>

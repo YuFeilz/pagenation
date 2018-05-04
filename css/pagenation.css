@@ -1,0 +1,18 @@
+#pagenation{
+    text-align: center;
+}
+#pagenation span{
+    display: inline-block;
+    text-align: center;
+    padding: 8px;
+    margin:0 2px;
+    border-radius: 5px;
+    border:1px solid  #f0f0f0;
+    color:#a9a9a9;
+    font-size: .8em;
+   
+}
+#pagenation a span{
+    background-color: #04a277;
+    color:#fff;
+}
