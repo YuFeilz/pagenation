@@ -2,21 +2,23 @@
     var num =0; 
     var totalPage = 0;//总页数
     var pageSize = psize;//每页显示行数
-    //所有行数(所有记录数)
+    //所有行数
     if($(this)[0].rows){
+      // 分页表格
       num=$(this)[0].rows.length;
     }else{
+      // 分页列表
       num=$(this).find('li').length;
     }
 
     // alert(num)
-    //总共分几页 
+    //总页数 
         totalPage=(num/pageSize)>parseInt(num/pageSize)?parseInt(num/pageSize)+1:parseInt(num/pageSize);
     var currentPage = pno;//当前页数
-    var startRow = (currentPage - 1) * pageSize;//开始显示的行 
-       var endRow = head&&currentPage>=2?currentPage * pageSize-2:currentPage * pageSize-1;//结束显示的行   
+    var startRow = (currentPage - 1) * pageSize;//开始行 
+       var endRow = head&&currentPage>=2?currentPage * pageSize-2:currentPage * pageSize-1;//结束行   
        endRow = endRow > num? num : endRow;    
-       //遍历显示数据实现分页
+    // 遍历显示对应的行
     for(var i=0;i<num;i++){  
       var irow=null;
       if($(this)[0].rows){
@@ -29,7 +31,7 @@
       }else{
           irow.style.display='none';
       }
-      if(head){
+      if(head){//是否需要固定头部
         $(this)[0].rows[0].style.display='table-row'||'block';
         $(this)[0].rows[0].style.fontWeight='700';
       }
